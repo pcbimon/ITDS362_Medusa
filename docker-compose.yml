@@ -1,7 +1,35 @@
 version: '3.8'
 services:
+  backend:
+    container_name: medusa_backend
+    build:
+      context: ./app/itgadget
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9000:9000
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - meilisearch
+  frontstore:
+    container_name: medusa_frontstore
+    build:
+      context: ./app/itgadget-storefront
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_MEDUSA_BACKEND_URL=${NEXT_PUBLIC_MEDUSA_BACKEND_URL}
+    restart: always
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - backend
   db:
-    image: postgres
+    container_name: medusa_db
+    image: postgres:latest
     restart: always
     environment:
       POSTGRES_USER: medusauser
@@ -11,5 +39,16 @@ services:
       - pg_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    restart: always
+    container_name: meilisearch
+    environment:
+      MEILI_MASTER_KEY: mallikas_for_itds362
+    volumes:
+      - meilisearch_data:/data.ms
+    ports:
+      - 7700:7700
 volumes:
   pg_data:
+  meilisearch_data:
