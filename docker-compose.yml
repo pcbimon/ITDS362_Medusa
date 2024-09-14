@@ -22,6 +22,7 @@ services:
       dockerfile: Dockerfile
       args:
         - NEXT_PUBLIC_MEDUSA_BACKEND_URL=${NEXT_PUBLIC_MEDUSA_BACKEND_URL}
+        - NEXT_PUBLIC_SEARCH_API_KEY=${NEXT_PUBLIC_SEARCH_API_KEY}
     restart: always
     ports:
       - 8000:8000
