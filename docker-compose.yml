@@ -1,43 +1,44 @@
 version: '3.8'
 services:
-  backend:
-    container_name: medusa_backend
-    build:
-      context: ./app/itgadget
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - 9000:9000
-      - 7000:7000
-      - 7001:7001
-    env_file:
-      - .env
-    depends_on:
-      - db
-      - meilisearch
-  frontstore:
-    container_name: medusa_frontstore
-    build:
-      context: ./app/itgadget-storefront
-      dockerfile: Dockerfile
-      args:
-        - NEXT_PUBLIC_MEDUSA_BACKEND_URL=${NEXT_PUBLIC_MEDUSA_BACKEND_URL}
-        - NEXT_PUBLIC_SEARCH_API_KEY=${NEXT_PUBLIC_SEARCH_API_KEY}
-    restart: always
-    ports:
-      - 8000:8000
-    env_file:
-      - .env
-    depends_on:
-      - backend
+  # backend:
+  #   container_name: medusa_backend
+  #   build:
+  #     context: ./app/itgadget
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 9000:9000
+  #     - 7000:7000
+  #     - 7001:7001
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - db
+  #     - meilisearch
+  # frontstore:
+  #   container_name: medusa_frontstore
+  #   build:
+  #     context: ./app/itgadget-storefront
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - NEXT_PUBLIC_MEDUSA_BACKEND_URL=${NEXT_PUBLIC_MEDUSA_BACKEND_URL}
+  #       - NEXT_PUBLIC_SEARCH_API_KEY=${NEXT_PUBLIC_SEARCH_API_KEY}
+  #   restart: always
+  #   ports:
+  #     - 8000:8000
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - backend
   db:
+    hostname: db
     container_name: medusa_db
-    image: postgres:latest
+    image: postgres:16
     restart: always
     environment:
       POSTGRES_USER: medusauser
       POSTGRES_PASSWORD: medusa_for_itds362
-      POSTGRES_DB: medusa
+      POSTGRES_DB: medusadb
     volumes:
       - pg_data:/var/lib/postgresql/data
     ports:
