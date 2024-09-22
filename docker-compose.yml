@@ -1,35 +1,30 @@
 version: '3.8'
 services:
-  # backend:
-  #   container_name: medusa_backend
-  #   build:
-  #     context: ./app/itgadget
-  #     dockerfile: Dockerfile
-  #   restart: always
-  #   ports:
-  #     - 9000:9000
-  #     - 7000:7000
-  #     - 7001:7001
-  #   env_file:
-  #     - .env
-  #   depends_on:
-  #     - db
-  #     - meilisearch
-  # frontstore:
-  #   container_name: medusa_frontstore
-  #   build:
-  #     context: ./app/itgadget-storefront
-  #     dockerfile: Dockerfile
-  #     args:
-  #       - NEXT_PUBLIC_MEDUSA_BACKEND_URL=${NEXT_PUBLIC_MEDUSA_BACKEND_URL}
-  #       - NEXT_PUBLIC_SEARCH_API_KEY=${NEXT_PUBLIC_SEARCH_API_KEY}
-  #   restart: always
-  #   ports:
-  #     - 8000:8000
-  #   env_file:
-  #     - .env
-  #   depends_on:
-  #     - backend
+  app-backstore:
+    container_name: medusa_app_backstore
+    build:
+      context: ./my-store
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 9000:9000
+    depends_on:
+      - db
+      - meilisearch
+    networks:
+      - my-store-network
+  app-frontstore:
+    container_name: medusa_app_frontstore
+    build:
+      context: ./my-store-storefront
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8000:8000
+    depends_on:
+      - app-backstore
+    networks:
+      - my-store-network
   db:
     hostname: db
     container_name: medusa_db
@@ -43,6 +38,8 @@ services:
       - pg_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    networks:
+      - my-store-network
   meilisearch:
     image: getmeili/meilisearch:latest
     restart: always
@@ -53,6 +50,11 @@ services:
       - meilisearch_data:/data.ms
     ports:
       - 7700:7700
+    networks:
+      - my-store-network
 volumes:
   pg_data:
   meilisearch_data:
+networks:
+  my-store-network:
+    driver: bridge
