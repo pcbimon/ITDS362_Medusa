@@ -14,4 +14,4 @@ COPY --from=backstore-build /app/backstore ./
 CMD [ "yarn" ,"start"]
 
 # Expose ports for backstore and frontstore
-EXPOSE 9000
+EXPOSE 9000 7000 7001
