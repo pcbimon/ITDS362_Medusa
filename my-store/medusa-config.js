@@ -61,19 +61,22 @@ const plugins = [
       },
       settings: {
         products: {
-          searchableAttributes: [
-            "title", 
-            "description",
-            "variant_sku",
-          ],
-          displayedAttributes: [
-            "id", 
-            "title", 
-            "description", 
-            "variant_sku", 
-            "thumbnail", 
-            "handle",
-          ],
+          indexSettings: {
+            searchableAttributes: [
+              "title", 
+              "description",
+              "variant_sku",
+            ],
+            displayedAttributes: [
+              "id", 
+              "title", 
+              "description", 
+              "variant_sku", 
+              "thumbnail", 
+              "handle",
+            ],
+          },
+          primaryKey: "id",
         },
       },
     },
