@@ -6499,6 +6499,13 @@ cross-fetch@4.0.0:
   dependencies:
     node-fetch "^2.6.12"
 
+cross-fetch@^3.1.5:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.8.tgz#0327eba65fd68a7d119f8fb2bf9334a1a7956f82"
+  integrity sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==
+  dependencies:
+    node-fetch "^2.6.12"
+
 cross-inspect@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cross-inspect/-/cross-inspect-1.0.0.tgz#5fda1af759a148594d2d58394a9e21364f6849af"
@@ -9463,7 +9470,7 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
-medusa-core-utils@1.2.3, medusa-core-utils@^1.2.3:
+medusa-core-utils@1.2.3, medusa-core-utils@^1.1.31, medusa-core-utils@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/medusa-core-utils/-/medusa-core-utils-1.2.3.tgz#d6f327c771868122721c470d2f5be3551bdf6f6e"
   integrity sha512-mNUqWh8G7BF9dcxt3t22GtSJrm4pfpU98QzvNgpqAvirVbBI4lOCpDQGoKE+jMHOLQJHrLQFoSJeqcofDJvEgA==
@@ -9501,6 +9508,16 @@ medusa-payment-stripe@6.0.11:
     express "^4.17.1"
     stripe "^11.10.0"
 
+medusa-plugin-meilisearch@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/medusa-plugin-meilisearch/-/medusa-plugin-meilisearch-1.0.0.tgz#3137d9246ec531325e0dc4597bc269dad5fc4d94"
+  integrity sha512-UG+UgNCPAn9WRsf33YV58/zhZmB6yj9HPEzP8Xf8RCdlfv2ltfs+PFoFaSGiiShZk9woRq9kU77boq40/pyRog==
+  dependencies:
+    body-parser "^1.19.0"
+    lodash "^4.17.21"
+    medusa-core-utils "^1.1.31"
+    meilisearch "0.27.0"
+
 medusa-react@^9.0.18:
   version "9.0.18"
   resolved "https://registry.yarnpkg.com/medusa-react/-/medusa-react-9.0.18.tgz#02b826f5b2720ecfd0334fdd9a49f341970f8ab9"
@@ -9523,6 +9540,13 @@ medusa-telemetry@^0.0.18:
     is-docker "^2.2.1"
     remove-trailing-slash "^0.1.1"
     uuid "^8.3.2"
+
+meilisearch@0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/meilisearch/-/meilisearch-0.27.0.tgz#8bd57ddb77b975f93e054cb977b951c488ece297"
+  integrity sha512-kZOZFIuSO7c6xRf+Y2/9/h6A9pl0sCl/G44X4KuaSwxGbruOZPhmxbeVEgLHBv4pUFvQ56rNVTA/2d/5GCU1YA==
+  dependencies:
+    cross-fetch "^3.1.5"
 
 memfs@^3.1.2, memfs@^3.4.3:
   version "3.6.0"
