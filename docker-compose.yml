@@ -38,6 +38,7 @@ services:
       POSTGRES_DB: medusadb
     volumes:
       - pg_data:/var/lib/postgresql/data
+      - ./postgresql/dump_store.sql:/tmp/dump_store.sql
     ports:
       - 5432:5432
     networks:
