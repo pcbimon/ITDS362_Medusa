@@ -15,6 +15,12 @@ services:
       - meilisearch
     networks:
       - my-store-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9000 || exit 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
   app-frontstore:
     container_name: medusa_app_frontstore
     build:
@@ -27,6 +33,12 @@ services:
       - app-backstore
     networks:
       - my-store-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000 || exit 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
   db:
     hostname: db
     container_name: medusa_db
