@@ -62,3 +62,8 @@ We welcome contributions to improve Medusa JS Store! If you have any ideas, sugg
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 Thank you for using Medusa JS Store! Happy coding!
+
+## Run Restore Backup 
+```bash
+docker compose exec db psql -U medusauser -d medusadb -f /tmp/dump_store.sql
+```
