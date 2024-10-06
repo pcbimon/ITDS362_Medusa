@@ -4,12 +4,15 @@ Welcome to the Medusa JS Store repository! This project is built using [Medusa](
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Medusa JS Store](#medusa-js-store)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Adding some bug for testing](#adding-some-bug-for-testing)
 
 ## Introduction
 
@@ -62,3 +65,6 @@ We welcome contributions to improve Medusa JS Store! If you have any ideas, sugg
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 Thank you for using Medusa JS Store! Happy coding!
+
+## Adding some bug for testing
+1. In checkout page. if user not check delivery option but `place order` button can press and throw error but data are receive

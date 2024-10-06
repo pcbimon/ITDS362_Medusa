@@ -23,10 +23,12 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
     !cart ||
     !cart.shipping_address ||
     !cart.billing_address ||
-    !cart.email ||
-    cart.shipping_methods.length < 1
-      ? true
-      : false
+    !cart.email 
+    /* Add bug for testing when no select shipping method */
+    // ||
+    // cart.shipping_methods.length < 1
+    //   ? true
+    //   : false
 
   const paidByGiftcard =
     cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0

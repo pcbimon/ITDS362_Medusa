@@ -20,7 +20,8 @@ const Review = ({
 
   const previousStepsCompleted =
     cart.shipping_address &&
-    cart.shipping_methods.length > 0 &&
+    /* Add bug for testing when no select shipping method */
+    // cart.shipping_methods.length > 0 &&
     (cart.payment_session || paidByGiftcard)
 
   return (
