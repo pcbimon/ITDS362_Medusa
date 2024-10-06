@@ -50,7 +50,8 @@ const SearchBoxWrapper = ({
 
   const onSubmit = () => {
     if (value) {
-      router.push(`/results/${value}`)
+      /* Add bug for test when on submit search result page got error */
+      router.push(`/results/%${value}%`)
     }
   }
 
