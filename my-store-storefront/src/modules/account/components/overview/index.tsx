@@ -4,6 +4,7 @@ import { formatAmount } from "@lib/util/prices"
 
 import ChevronDown from "@modules/common/icons/chevron-down"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ErrorMessage from "@modules/checkout/components/error-message"
 
 type OverviewProps = {
   customer: Omit<Customer, "password_hash"> | null
@@ -56,9 +57,12 @@ const Overview = ({ customer, orders }: OverviewProps) => {
               <ul className="flex flex-col gap-y-4" data-testid="orders-wrapper">
                 {orders && orders.length > 0 ? (
                   orders.slice(0, 5).map((order) => {
+                    // add bug for testing when has order will display error message
+
                     return (
                       <li key={order.id} data-testid="order-wrapper" data-value={order.id}>
-                        <LocalizedClientLink
+                        <ErrorMessage error={`somethings wrongs please contact admin. order id = ${order.id}`} />
+                        {/* <LocalizedClientLink
                           href={`/account/orders/details/${order.id}`}
                         >
                           <Container className="bg-gray-50 flex justify-between items-center p-4">
@@ -89,7 +93,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                               <ChevronDown className="-rotate-90" />
                             </button>
                           </Container>
-                        </LocalizedClientLink>
+                        </LocalizedClientLink> */}
                       </li>
                     )
                   })

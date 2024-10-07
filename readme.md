@@ -69,3 +69,4 @@ Thank you for using Medusa JS Store! Happy coding!
 ## Adding some bug for testing
 1. In checkout page. if user not check delivery option but `place order` button can press and throw error but data are receive
 2. On Submit search, app will throw errorbad request because system add `%search_text%`
+3. when ordered success with account. in Recent orders display error instead order detail
