@@ -85,10 +85,8 @@ export async function updateCustomerEmail(
   } as StorePostCustomersCustomerReq
 
   try {
-    await updateCustomer(customer).then(() => {
-      revalidateTag("customer")
-    })
-    return { success: true, error: null }
+    // Change Email
+    return { success: false, error: "something worng please contract admin" }
   } catch (error: any) {
     return { success: false, error: error.toString() }
   }

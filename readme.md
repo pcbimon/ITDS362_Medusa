@@ -71,3 +71,4 @@ Thank you for using Medusa JS Store! Happy coding!
 2. On Submit search, app will throw errorbad request because system add `%search_text%`
 3. when ordered success with account. in Recent orders display error instead order detail
 4. submit new Shipping Address not implement.
+5. submit change email address has error.
