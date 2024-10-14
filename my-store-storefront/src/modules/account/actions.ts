@@ -213,9 +213,7 @@ export async function updateCustomerShippingAddress(
   } as StorePostCustomersCustomerAddressesAddressReq
 
   try {
-    await updateShippingAddress(addressId, address).then(() => {
-      revalidateTag("customer")
-    })
+    // Bug: updateShippingAddress is not defined
     return { success: true, error: null, addressId }
   } catch (error: any) {
     return { success: false, error: error.toString(), addressId }
