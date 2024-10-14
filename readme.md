@@ -70,4 +70,4 @@ Thank you for using Medusa JS Store! Happy coding!
 1. In checkout page. if user not check delivery option but `place order` button can press and throw error but data are receive
 2. On Submit search, app will throw errorbad request because system add `%search_text%`
 3. when ordered success with account. in Recent orders display error instead order detail
-4. Shipping Address not implement.
+4. submit new Shipping Address not implement.
