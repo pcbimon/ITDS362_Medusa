@@ -49,7 +49,7 @@ services:
       POSTGRES_PASSWORD: medusa_for_itds362
       POSTGRES_DB: medusadb
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - ./postgresql/data:/var/lib/postgresql/data
       - ./postgresql/dump_store.sql:/tmp/dump_store.sql
     ports:
       - 5432:5432
@@ -68,7 +68,6 @@ services:
     networks:
       - my-store-network
 volumes:
-  pg_data:
   meilisearch_data:
 networks:
   my-store-network:
