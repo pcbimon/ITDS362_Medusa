@@ -72,3 +72,7 @@ Thank you for using Medusa JS Store! Happy coding!
 3. when ordered success with account. in Recent orders display error instead order detail
 4. submit new Shipping Address not implement.
 5. submit change email address has error.
+## Run Restore Backup 
+```bash
+docker compose exec db psql -U medusauser -d medusadb -f /tmp/dump_store.sql
+```
