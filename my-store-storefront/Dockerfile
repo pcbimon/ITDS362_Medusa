@@ -1,5 +1,5 @@
 # Stage 1: Build frontstore
-FROM node:20 AS frontstore-build
+FROM node:20-alpine AS frontstore-build
 WORKDIR /app/frontstore
 COPY ./package*.json ./
 COPY ./yarn.lock ./
