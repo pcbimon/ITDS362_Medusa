@@ -6,8 +6,6 @@ COPY ./yarn.lock ./
 RUN yarn install
 COPY . .
 RUN yarn build
-# install medusa cli
-RUN yarn global add @medusajs/medusa
 CMD [ "yarn" ,"start"]
 
 # Expose ports for backstore and frontstore
