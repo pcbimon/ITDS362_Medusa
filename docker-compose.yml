@@ -48,7 +48,7 @@ services:
     volumes:
       - ./postgresql/data:/var/lib/postgresql/data
       - ./postgresql/dump_store.sql:/tmp/dump_store.sql
-      - ./postgresql/backups:/tmp/backups
+      - ./postgresql/backup:/tmp/backup
     ports:
       - 5432:5432
     networks:
