@@ -51,35 +51,6 @@ const plugins = [
         open: process.env.OPEN_BROWSER !== "false",
       },
     },
-  },
-  {
-    resolve: `medusa-plugin-meilisearch`,
-    options: {
-      config: {
-        host: process.env.MEILISEARCH_HOST,
-        apiKey: process.env.MEILISEARCH_API_KEY,
-      },
-      settings: {
-        products: {
-          indexSettings: {
-            searchableAttributes: [
-              "title", 
-              "description",
-              "variant_sku",
-            ],
-            displayedAttributes: [
-              "id", 
-              "title", 
-              "description", 
-              "variant_sku", 
-              "thumbnail", 
-              "handle",
-            ],
-          },
-          primaryKey: "id",
-        },
-      },
-    },
   }
 ];
 
