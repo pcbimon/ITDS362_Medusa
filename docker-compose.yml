@@ -67,6 +67,17 @@ services:
       - 7700:7700
     networks:
       - my-store-network
+  nginx:
+    image: nginx:stable-alpine
+    container_name: app-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    networks:
+      - my-store-network
 volumes:
   meilisearch_data:
 networks:
