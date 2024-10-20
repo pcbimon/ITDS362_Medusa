@@ -43,7 +43,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: medusauser
-      POSTGRES_PASSWORD: medusa_for_itds362
+      POSTGRES_PASSWORD: mystorepass
       POSTGRES_DB: medusadb
     volumes:
       - ./postgresql/data:/var/lib/postgresql/data
