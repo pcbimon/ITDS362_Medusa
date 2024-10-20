@@ -1,5 +1,5 @@
 # Stage 1: Build backstore
-FROM node:20 AS backstore-build
+FROM node:20-alpine AS backstore-build
 WORKDIR /app/backstore
 COPY ./package*.json ./
 COPY ./yarn.lock ./
